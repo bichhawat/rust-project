@@ -180,7 +180,6 @@ impl BPlusTree {
         let prev_sibling = prev_sibling.as_mut();
         let next_sibling = next_sibling.as_mut();
     
-        // Rest of the code using child, prev_sibling, and next_sibling in the same scope
         if prev_sibling.num_keys > ORDER / 2 {
             child.keys.insert(0, self.keys[child_index - 1]);
             self.keys[child_index - 1] = prev_sibling.keys.pop().unwrap();
